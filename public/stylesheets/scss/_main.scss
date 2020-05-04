@@ -1,0 +1,225 @@
+.articles {
+  margin: 1em 0;
+}
+
+.article {
+  + .article {
+    margin-top: 2em;
+  }
+
+  &__preview {
+    position: relative;
+  }
+
+  &__tag {
+    position: absolute;
+    top: -3.5em;
+    left: 1em;
+    background-color: white;
+    padding: .5em 1em;
+    font-weight: 700;
+    color: black;
+  }
+
+  &--featured {
+    .article__tag {
+      right: 1em;
+      left: auto;
+    }
+  }
+
+  h1, h2, h3, h4 {
+    font-weight: 700;
+  }
+
+  h1, h2, h3, h4, p {
+    line-height: 1.4em;
+    margin: .5em 0;
+  }
+}
+
+.sidebar {
+  &__section {
+    border: 1px solid $lightGrey--border;
+    padding: 1em;
+    margin: 1em 0;
+  }
+}
+
+.currency-comparison {
+  padding: 0;
+}
+
+.currency {
+  text-transform: uppercase;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: .5em;
+
+  + .currency {
+    border-top: 1px solid $lightGrey--border;
+  }
+
+  > div {
+    flex: 1;
+  }
+
+  &__which {
+    display: flex;
+    align-items: center;
+  }
+
+  &__name {
+    margin-left: 5px;
+    color: $grey--font;
+  }
+
+  &__value, &__difference {
+    text-align: right;
+  }
+
+  &__value, time {
+    color: $lightGrey--font;
+  }
+
+  &--dollar {
+    padding: 1em .5em;
+  }
+
+  &--pos .currency__difference {
+    color: $positive;
+  }
+
+  &--neg .currency__difference {
+    color: $negative;
+  }
+}
+
+.sidebar {
+  &__heading {
+    color: $lightGrey--font;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 1.5em;
+    border-bottom: 1px solid $lightGrey--border;
+    padding-bottom: .5em;
+  }
+
+  &__article {
+    margin: 1em 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__info {
+      font-size: .75rem;
+      margin-left: 1em;
+
+      time {
+        color: $lightGrey--font;
+      }
+
+      h3 {
+        margin-top: 1em;
+        font-weight: 700;
+        line-height: 1.3em;
+      }
+    }
+  }
+
+  &__footer {
+    border-top: 1px solid $lightGrey--border;
+    padding-top: 1em;
+    text-align: center;
+
+    a {
+      color: $lightGrey--font;
+    }
+  }
+}
+
+.category {
+  &__image {
+    position: relative;
+  }
+
+  &__tag {
+    position: absolute;
+    bottom: 1em;
+    left: 1em;
+    padding: .5em;
+    color: white;
+    min-width: 125px;
+    text-transform: uppercase;
+
+    &--tech {
+      background-color: $red;
+    }
+
+    &--health {
+      background-color: $purple;
+    }
+
+    &--business {
+      background-color: $blue;
+    }
+  }
+
+  &__info {
+    margin: 1em 0;
+
+    li + li {
+      margin-top: 1.5em;
+      line-height: 1.4em;
+    }
+
+    li::before {
+      content: '- ';
+    }
+  }
+}
+
+.ads {
+  img {
+    width: 100%;
+    margin: .5em 0;
+  }
+}
+
+.footer-nav {
+  background-color: $grey;
+  color: white;
+  padding: 2em 0;
+
+  li + li {
+    margin-top: 1.25em;
+  }
+
+  li {
+    text-align: center;
+  }
+}
+
+.main-footer {
+  background-color: $lightGrey;
+  color: white;
+  padding: 2em 0;
+
+  &__logos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+
+    img {
+      margin-top: 1em;
+    }
+  }
+
+  p {
+    font-size: .8rem;
+    text-align: center;
+    line-height: 1.5em;
+  }
+}
