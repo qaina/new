@@ -289,6 +289,35 @@
           <img src="public/images/footer-logos/footer-logo-xfinity.png" alt="footer-logo-xfinity">
         </section>
       </div>
+      <button type="button">Click Me!</button><script>
+if ('canShare' in navigator) {
+  const share = async function(shareimg, shareurl, sharetitle, sharetext) {
+    try {
+      const response = await fetch(shareimg);
+      const blob = await response.blob();
+      const file = new File([blob], 'rick.jpg', {type: blob.type});
+
+      await navigator.share({
+        url: shareurl,
+        title: sharetitle,
+        text: sharetext,
+        files: [file]
+      });
+    } catch (err) {
+      console.log(err.name, err.message);
+    }
+  };
+
+  document.querySelector('button').addEventListener('click', () => {
+    share(
+      'https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Rick_Astley_Dallas.jpg/267px-Rick_Astley_Dallas.jpg',
+      'https://en.wikipedia.org/wiki/Rick_Astley',
+      'Rick Astley',
+      'Never gonna give you up!'
+    );
+  });  
+}
+      </script>
     </footer>
   </body>
 </html>
